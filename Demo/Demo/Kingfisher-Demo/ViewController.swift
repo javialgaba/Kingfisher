@@ -100,7 +100,7 @@ struct MyIndicator: Indicator {
 
 extension ViewController: UICollectionViewDataSourcePrefetching {
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
-        let urls = indexPaths.flatMap {
+        let urls = indexPaths.compactMap {
             URL(string: "https://raw.githubusercontent.com/onevcat/Kingfisher/master/images/kingfisher-\($0.row + 1).jpg")
         }
         
